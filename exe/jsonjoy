@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+
+require "jsonjoy"
+Jsonjoy::CLI.new.call(ARGV)
