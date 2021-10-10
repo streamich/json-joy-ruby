@@ -1,7 +1,7 @@
-require_relative "../lib/json_pointer/json_pointer"
+require_relative "../../lib/json_pointer/json_pointer"
 require "test_helper"
 
-class JsonPointerTest < Minitest::Test
+class JsonPointerParseTest < Minitest::Test
 
   def test_unescapes_special_characters
     assert_equal(Json::Pointer.unescape_component('~0'), '~')

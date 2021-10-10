@@ -10,5 +10,12 @@ module Json
       return component if !component.index('~') && !component.index('/')
       component.gsub('~', '~0').gsub('/', '~1')
     end
+
+    def self.parse str
+      return [] if str.empty?
+      return [''] if str == '/'
+      components = str[1..-1].split '/', -1
+      components.map! { |component| unescape_component component }
+    end
   end
 end
