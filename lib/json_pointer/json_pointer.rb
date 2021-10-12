@@ -17,5 +17,11 @@ module Json
       components = str[1..-1].split '/', -1
       components.map! { |component| unescape_component component }
     end
+
+    def self.format components
+      escaped = components.map { |component| escape_component component }
+      pointer = escaped.join('/')
+      pointer.empty? ? '' : '/' + pointer
+    end
   end
 end
